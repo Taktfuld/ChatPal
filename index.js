@@ -31,11 +31,23 @@ client.on('messageCreate', async (message) => {
     const embed = new EmbedBuilder()
       .setColor(0x10A37F)
       .setTitle('✓ Channel Configured')
-      .setDescription('This channel is now set up for AI conversations. I\'ll respond to all messages here (except those starting with "?").')
-      .setFooter({ text: '0xzero AI • Powered by GPT' })
+      .setDescription('This channel is now set up for AI conversations!\n\n**📖 How to Use:**\n• Just type any message and I\'ll respond with AI-powered answers\n• Messages starting with "?" will be ignored\n• Ask me anything - coding help, explanations, advice, or general questions\n\n**Available Commands:**\n• `!setchannel` - Set up AI chat in this channel\n• `!help` - Show this help message')
+      .setFooter({ text: '0xzero AI • Powered by GPT-4o' })
       .setTimestamp();
     
     message.reply({ embeds: [embed] });
+    return;
+  }
+
+  if (message.content === '!help') {
+    const helpEmbed = new EmbedBuilder()
+      .setColor(0x10A37F)
+      .setTitle('🤖 0xzero AI Bot - Help')
+      .setDescription('**How It Works:**\nI\'m an AI-powered assistant that responds to your messages with intelligent, detailed answers using GPT-4o.\n\n**📖 Usage:**\n• Just type any message in the configured channel\n• I\'ll respond with comprehensive, well-formatted answers\n• Messages starting with "?" are ignored (for other bots)\n\n**⚙️ Commands:**\n• `!setchannel` - Set up AI chat in current channel\n• `!help` - Show this help message\n\n**💡 Tips:**\n• Ask detailed questions for better answers\n• I can help with coding, explanations, advice, and more\n• Responses include markdown formatting for clarity')
+      .setFooter({ text: '0xzero AI • Powered by GPT-4o' })
+      .setTimestamp();
+    
+    message.reply({ embeds: [helpEmbed] });
     return;
   }
 

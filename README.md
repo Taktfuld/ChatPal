@@ -17,7 +17,6 @@ A professional Discord bot that responds to messages in a designated channel usi
    - Select permissions: `Send Messages`, `Read Messages/View Channels`, `Read Message History`
    - Copy the generated URL and open it in your browser to invite the bot
 
-3. Add your bot token as a secret (DISCORD_BOT_TOKEN)
 
 ## Usage
 

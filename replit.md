@@ -31,9 +31,11 @@ Preferred communication style: Simple, everyday language.
 - **Typing indicator**: Sends typing status while processing AI requests for better UX
 
 ### Command System
-- **Simple prefix-based commands**: Uses `!setchannel` command for channel configuration
+- **Simple prefix-based commands**: Uses `!setchannel` and `!help` commands
+- **Admin-only access**: Both commands require Administrator permissions to prevent unauthorized configuration
 - **Embed responses**: Uses Discord EmbedBuilder for rich, formatted confirmation messages
-- **No command framework**: Direct string matching for simplicity given single command requirement
+- **Permission validation**: Shows clear permission denied error for non-admin users
+- **No command framework**: Direct string matching for simplicity
 
 ### Professional UI/UX
 - **Consistent embed formatting**: ALL bot responses use Discord embeds with professional styling

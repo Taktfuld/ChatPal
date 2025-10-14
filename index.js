@@ -1,4 +1,4 @@
-const { Client, GatewayIntentBits, EmbedBuilder } = require('discord.js');
+const { Client, GatewayIntentBits, EmbedBuilder, PermissionFlagBits } = require('discord.js');
 const OpenAI = require('openai');
 
 const client = new Client({
@@ -26,12 +26,24 @@ client.on('messageCreate', async (message) => {
   if (message.author.bot) return;
 
   if (message.content === '!setchannel') {
+    if (!message.member.permissions.has(PermissionFlagBits.Administrator)) {
+      const noPermEmbed = new EmbedBuilder()
+        .setColor(0xFF0000)
+        .setTitle('❌ Permission Denied')
+        .setDescription('You need **Administrator** permissions to use this command.')
+        .setFooter({ text: '0xzero AI • Made by Taktfuld' })
+        .setTimestamp();
+      
+      message.reply({ embeds: [noPermEmbed] });
+      return;
+    }
+
     setupChannelId = message.channel.id;
     
     const embed = new EmbedBuilder()
       .setColor(0x10A37F)
       .setTitle('✓ Channel Configured')
-      .setDescription('This channel is now set up for AI conversations!\n\n**📖 How to Use:**\n• Just type any message and I\'ll respond with AI-powered answers\n• Messages starting with "?" will be ignored\n• Ask me anything - coding help, explanations, advice, or general questions\n\n**Available Commands:**\n• `!setchannel` - Set up AI chat in this channel\n• `!help` - Show this help message')
+      .setDescription('This channel is now set up for AI conversations!\n\n**📖 How to Use:**\n• Just type any message and I\'ll respond with AI-powered answers\n• Messages starting with "?" will be ignored\n• Ask me anything - coding help, explanations, advice, or general questions\n\n**Available Commands:**\n• `!setchannel` - Set up AI chat in this channel (Admin only)\n• `!help` - Show this help message (Admin only)')
       .setFooter({ text: '0xzero AI • Made by Taktfuld' })
       .setTimestamp();
     
@@ -40,10 +52,22 @@ client.on('messageCreate', async (message) => {
   }
 
   if (message.content === '!help') {
+    if (!message.member.permissions.has(PermissionFlagBits.Administrator)) {
+      const noPermEmbed = new EmbedBuilder()
+        .setColor(0xFF0000)
+        .setTitle('❌ Permission Denied')
+        .setDescription('You need **Administrator** permissions to use this command.')
+        .setFooter({ text: '0xzero AI • Made by Taktfuld' })
+        .setTimestamp();
+      
+      message.reply({ embeds: [noPermEmbed] });
+      return;
+    }
+
     const helpEmbed = new EmbedBuilder()
       .setColor(0x10A37F)
       .setTitle('🤖 0xzero AI Bot - Help')
-      .setDescription('**How It Works:**\nI\'m an AI-powered assistant that responds to your messages with intelligent, detailed answers using GPT-4o.\n\n**📖 Usage:**\n• Just type any message in the configured channel\n• I\'ll respond with comprehensive, well-formatted answers\n• Messages starting with "?" are ignored (for other bots)\n\n**⚙️ Commands:**\n• `!setchannel` - Set up AI chat in current channel\n• `!help` - Show this help message\n\n**💡 Tips:**\n• Ask detailed questions for better answers\n• I can help with coding, explanations, advice, and more\n• Responses include markdown formatting for clarity')
+      .setDescription('**How It Works:**\nI\'m an AI-powered assistant that responds to your messages with intelligent, detailed answers using GPT-4o.\n\n**📖 Usage:**\n• Just type any message in the configured channel\n• I\'ll respond with brief, clear answers\n• Messages starting with "?" are ignored (for other bots)\n\n**⚙️ Commands (Admin Only):**\n• `!setchannel` - Set up AI chat in current channel\n• `!help` - Show this help message\n\n**💡 Tips:**\n• Ask detailed questions for better answers\n• Say "explain in detail" or "elaborate" for longer responses\n• I can help with coding, explanations, advice, and more')
       .setFooter({ text: '0xzero AI • Made by Taktfuld' })
       .setTimestamp();
     

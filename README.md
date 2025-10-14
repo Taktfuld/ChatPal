@@ -12,11 +12,9 @@ A professional Discord bot that responds to messages in a designated channel usi
 - Simple channel setup with `!setchannel` command
 
 2. Invite the bot to your server
-   - Go to OAuth2 > URL Generator
-   - Select scopes: `bot`
-   - Select permissions: `Send Messages`, `Read Messages/View Channels`, `Read Message History`
+   - GO to taktfuld github
+   - Find the url
    - Copy the generated URL and open it in your browser to invite the bot
-
 
 ## Usage
 
@@ -29,3 +27,6 @@ A professional Discord bot that responds to messages in a designated channel usi
 - The bot listens to all messages in the designated channel
 - When a message is received (that doesn't start with "?"), it sends the message to OpenAI's GPT-4o-mini
 - The AI response is sent back as a reply to the user's message
+
+
+"MADE BY TAKTFULD"

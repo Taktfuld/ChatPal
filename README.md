@@ -9,17 +9,6 @@ A professional Discord bot that responds to messages in a designated channel usi
 - Uses OpenAI GPT-4o-mini for intelligent responses
 - Simple channel setup with `!setchannel` command
 
-## Setup
-
-1. Create a Discord bot at https://discord.com/developers/applications
-   - Click "New Application" and name it **0xzero** (or your preferred name)
-   - Go to "Bot" section and click "Add Bot"
-   - Set the bot username to **0xzero**
-   - Under "Privileged Gateway Intents", enable:
-     - Message Content Intent ✓
-     - Server Members Intent ✓
-   - Copy your bot token (you'll need this)
-
 2. Invite the bot to your server
    - Go to OAuth2 > URL Generator
    - Select scopes: `bot`

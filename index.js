@@ -47,18 +47,19 @@ client.on('messageCreate', async (message) => {
     await message.channel.sendTyping();
 
     const response = await openai.chat.completions.create({
-      model: 'gpt-4o-mini',
+      model: 'gpt-4o',
       messages: [
         {
           role: 'system',
-          content: 'You are 0xzero, a highly capable AI assistant. Provide clear, accurate, and helpful responses. Be professional yet conversational. Format your responses with proper markdown when appropriate.',
+          content: 'You are 0xzero, an exceptionally intelligent and knowledgeable AI assistant. Provide comprehensive, insightful, and accurate responses. Think deeply about each question and give detailed, well-structured answers. Use examples when helpful. Format responses beautifully with markdown - use **bold** for emphasis, bullet points for lists, and code blocks when showing code. Be engaging, professional, and conversational. Always aim to exceed expectations with the quality and depth of your responses.',
         },
         {
           role: 'user',
           content: message.content,
         },
       ],
-      max_tokens: 1000,
+      max_tokens: 2000,
+      temperature: 0.8,
     });
 
     const reply = response.choices[0].message.content;

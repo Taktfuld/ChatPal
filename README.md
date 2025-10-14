@@ -4,9 +4,11 @@ A professional Discord bot that responds to messages in a designated channel usi
 
 ## Features
 
-- Responds to all messages in the setup channel
+- Responds to all messages in the setup channel with detailed, intelligent answers
 - Ignores messages that start with "?"
-- Uses OpenAI GPT-4o-mini for intelligent responses
+- Uses **OpenAI GPT-4o** (premium model) for exceptional response quality
+- Enhanced AI with comprehensive, well-structured answers and markdown formatting
+- 2000 token limit for detailed responses
 - Simple channel setup with `!setchannel` command
 
 2. Invite the bot to your server

@@ -16,7 +16,10 @@ Preferred communication style: Simple, everyday language.
 - **Event-driven architecture**: Relies on Discord.js event listeners (`ready`, `messageCreate`) for handling bot lifecycle and user interactions
 
 ### AI Integration
-- **OpenAI GPT-4o-mini**: Selected for intelligent message responses, balancing cost-efficiency with quality
+- **OpenAI GPT-4o**: Premium AI model selected for exceptional response quality, depth, and intelligence
+- **Enhanced System Prompt**: Configured to provide comprehensive, insightful, and well-structured responses with markdown formatting
+- **Extended Token Limit**: 2000 max tokens for detailed, thorough answers
+- **Optimized Temperature**: 0.8 temperature setting for creative yet accurate responses
 - **OpenAI SDK v6**: Official SDK used for API communication with support for custom base URLs
 - **Environment-based configuration**: API credentials stored in environment variables (`AI_INTEGRATIONS_OPENAI_API_KEY`, `AI_INTEGRATIONS_OPENAI_BASE_URL`)
 

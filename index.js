@@ -1,4 +1,4 @@
-const { Client, GatewayIntentBits } = require('discord.js');
+const { Client, GatewayIntentBits, EmbedBuilder } = require('discord.js');
 const OpenAI = require('openai');
 
 const client = new Client({
@@ -17,9 +17,9 @@ const openai = new OpenAI({
 let setupChannelId = null;
 
 client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-  console.log('Bot is ready to receive messages!');
-  console.log('Use !setchannel in any channel to set it as the AI chat channel');
+  console.log(`✓ Logged in as ${client.user.tag}`);
+  console.log(`✓ 0xzero AI Bot is online and ready`);
+  console.log(`✓ Use !setchannel in any channel to enable AI chat`);
 });
 
 client.on('messageCreate', async (message) => {
@@ -27,7 +27,15 @@ client.on('messageCreate', async (message) => {
 
   if (message.content === '!setchannel') {
     setupChannelId = message.channel.id;
-    message.reply(`✅ This channel has been set up for AI chat! I'll respond to all messages here (except those starting with "?").`);
+    
+    const embed = new EmbedBuilder()
+      .setColor(0x10A37F)
+      .setTitle('✓ Channel Configured')
+      .setDescription('This channel is now set up for AI conversations. I\'ll respond to all messages here (except those starting with "?").')
+      .setFooter({ text: '0xzero AI • Powered by GPT' })
+      .setTimestamp();
+    
+    message.reply({ embeds: [embed] });
     return;
   }
 
@@ -43,29 +51,47 @@ client.on('messageCreate', async (message) => {
       messages: [
         {
           role: 'system',
-          content: 'You are a helpful AI assistant in a Discord channel. Be conversational, friendly, and concise.',
+          content: 'You are 0xzero, a highly capable AI assistant. Provide clear, accurate, and helpful responses. Be professional yet conversational. Format your responses with proper markdown when appropriate.',
         },
         {
           role: 'user',
           content: message.content,
         },
       ],
-      max_tokens: 500,
+      max_tokens: 1000,
     });
 
     const reply = response.choices[0].message.content;
     
-    if (reply.length > 2000) {
-      const chunks = reply.match(/.{1,2000}/g);
+    if (reply.length > 4000) {
+      const chunks = reply.match(/[\s\S]{1,1900}/g);
       for (const chunk of chunks) {
-        await message.reply(chunk);
+        const embed = new EmbedBuilder()
+          .setColor(0x10A37F)
+          .setDescription(chunk)
+          .setFooter({ text: '0xzero AI' })
+          .setTimestamp();
+        await message.reply({ embeds: [embed] });
       }
     } else {
-      await message.reply(reply);
+      const embed = new EmbedBuilder()
+        .setColor(0x10A37F)
+        .setDescription(reply)
+        .setFooter({ text: '0xzero AI' })
+        .setTimestamp();
+      await message.reply({ embeds: [embed] });
     }
   } catch (error) {
     console.error('Error generating AI response:', error);
-    message.reply('Sorry, I encountered an error while processing your message. Please try again.');
+    
+    const errorEmbed = new EmbedBuilder()
+      .setColor(0xFF0000)
+      .setTitle('⚠ Error')
+      .setDescription('I encountered an error processing your message. Please try again.')
+      .setFooter({ text: '0xzero AI' })
+      .setTimestamp();
+    
+    message.reply({ embeds: [errorEmbed] });
   }
 });
 

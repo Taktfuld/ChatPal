@@ -1,6 +1,6 @@
-# Discord AI Chat Bot
+# 0xzero AI Discord Bot
 
-A Discord bot that responds to messages in a designated channel using AI (ChatGPT).
+A professional Discord bot that responds to messages in a designated channel using AI (ChatGPT-4o).
 
 ## Features
 
@@ -12,11 +12,12 @@ A Discord bot that responds to messages in a designated channel using AI (ChatGP
 ## Setup
 
 1. Create a Discord bot at https://discord.com/developers/applications
-   - Click "New Application" and give it a name
+   - Click "New Application" and name it **0xzero** (or your preferred name)
    - Go to "Bot" section and click "Add Bot"
+   - Set the bot username to **0xzero**
    - Under "Privileged Gateway Intents", enable:
-     - Message Content Intent
-     - Server Members Intent
+     - Message Content Intent ✓
+     - Server Members Intent ✓
    - Copy your bot token (you'll need this)
 
 2. Invite the bot to your server

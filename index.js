@@ -32,7 +32,7 @@ client.on('messageCreate', async (message) => {
       .setColor(0x10A37F)
       .setTitle('✓ Channel Configured')
       .setDescription('This channel is now set up for AI conversations!\n\n**📖 How to Use:**\n• Just type any message and I\'ll respond with AI-powered answers\n• Messages starting with "?" will be ignored\n• Ask me anything - coding help, explanations, advice, or general questions\n\n**Available Commands:**\n• `!setchannel` - Set up AI chat in this channel\n• `!help` - Show this help message')
-      .setFooter({ text: '0xzero AI • Powered by GPT-4o' })
+      .setFooter({ text: '0xzero AI • Made by Taktfuld' })
       .setTimestamp();
     
     message.reply({ embeds: [embed] });
@@ -44,7 +44,7 @@ client.on('messageCreate', async (message) => {
       .setColor(0x10A37F)
       .setTitle('🤖 0xzero AI Bot - Help')
       .setDescription('**How It Works:**\nI\'m an AI-powered assistant that responds to your messages with intelligent, detailed answers using GPT-4o.\n\n**📖 Usage:**\n• Just type any message in the configured channel\n• I\'ll respond with comprehensive, well-formatted answers\n• Messages starting with "?" are ignored (for other bots)\n\n**⚙️ Commands:**\n• `!setchannel` - Set up AI chat in current channel\n• `!help` - Show this help message\n\n**💡 Tips:**\n• Ask detailed questions for better answers\n• I can help with coding, explanations, advice, and more\n• Responses include markdown formatting for clarity')
-      .setFooter({ text: '0xzero AI • Powered by GPT-4o' })
+      .setFooter({ text: '0xzero AI • Made by Taktfuld' })
       .setTimestamp();
     
     message.reply({ embeds: [helpEmbed] });
@@ -63,14 +63,14 @@ client.on('messageCreate', async (message) => {
       messages: [
         {
           role: 'system',
-          content: 'You are 0xzero, an exceptionally intelligent and knowledgeable AI assistant. Provide comprehensive, insightful, and accurate responses. Think deeply about each question and give detailed, well-structured answers. Use examples when helpful. Format responses beautifully with markdown - use **bold** for emphasis, bullet points for lists, and code blocks when showing code. Be engaging, professional, and conversational. Always aim to exceed expectations with the quality and depth of your responses.',
+          content: 'You are 0xzero, an intelligent AI assistant. Give concise, clear, and accurate answers by default. Only provide detailed explanations when the user specifically asks for them (e.g., "explain in detail", "tell me more", "elaborate"). Use markdown formatting - **bold** for emphasis, bullet points for lists, and code blocks for code. Be professional and helpful.',
         },
         {
           role: 'user',
           content: message.content,
         },
       ],
-      max_tokens: 2000,
+      max_tokens: 600,
       temperature: 0.8,
     });
 
@@ -82,7 +82,7 @@ client.on('messageCreate', async (message) => {
         const embed = new EmbedBuilder()
           .setColor(0x10A37F)
           .setDescription(chunk)
-          .setFooter({ text: '0xzero AI' })
+          .setFooter({ text: '0xzero AI • Made by Taktfuld' })
           .setTimestamp();
         await message.reply({ embeds: [embed] });
       }

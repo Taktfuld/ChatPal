@@ -16,9 +16,9 @@ Preferred communication style: Simple, everyday language.
 - **Event-driven architecture**: Relies on Discord.js event listeners (`ready`, `messageCreate`) for handling bot lifecycle and user interactions
 
 ### AI Integration
-- **OpenAI GPT-4o**: Premium AI model selected for exceptional response quality, depth, and intelligence
-- **Enhanced System Prompt**: Configured to provide comprehensive, insightful, and well-structured responses with markdown formatting
-- **Extended Token Limit**: 2000 max tokens for detailed, thorough answers
+- **OpenAI GPT-4o**: Premium AI model selected for exceptional response quality and intelligence
+- **Concise System Prompt**: Configured to provide clear, concise answers by default; detailed responses only when explicitly requested by user
+- **Token Limit**: 600 max tokens for brief, focused answers (prevents overly long responses)
 - **Optimized Temperature**: 0.8 temperature setting for creative yet accurate responses
 - **OpenAI SDK v6**: Official SDK used for API communication with support for custom base URLs
 - **Environment-based configuration**: API credentials stored in environment variables (`AI_INTEGRATIONS_OPENAI_API_KEY`, `AI_INTEGRATIONS_OPENAI_BASE_URL`)
@@ -38,7 +38,7 @@ Preferred communication style: Simple, everyday language.
 ### Professional UI/UX
 - **Consistent embed formatting**: ALL bot responses use Discord embeds with professional styling
 - **OpenAI-inspired design**: Green color scheme (#10A37F) matching OpenAI's branding
-- **Branded footers**: Every embed includes "0xzero AI" footer for consistent branding
+- **Branded footers**: Every embed includes "0xzero AI • Made by Taktfuld" footer for consistent branding and creator credit
 - **Timestamps**: All embeds include timestamps for professional appearance
 - **Smart chunking**: Long responses (>4000 chars) are split into multiple embeds while preserving formatting and newlines
 - **Error embeds**: Errors are displayed with red embeds for clear visual distinction

@@ -33,16 +33,6 @@ AI-powered Discord bot that responds to messages using GPT-4o. Professional inte
 - `!purge <number>` - Delete messages (1-100)
 - `!help` - Show help information
 
-## Deployment (24/7)
-
-To run your bot 24/7 on Replit:
-
-1. Open **"Deployments"** from the left sidebar
-2. Select **"Reserved VM"**
-3. Choose **"Background worker"** as app type
-4. Set run command: `node index.js`
-5. Click **Deploy**
-
 ## Requirements
 
 - Discord Bot Token (as `DISCORD_BOT_TOKEN` secret)

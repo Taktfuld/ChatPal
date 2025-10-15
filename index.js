@@ -33,7 +33,7 @@ client.on('messageCreate', async (message) => {
     const embed = new EmbedBuilder()
       .setColor(0x10A37F)
       .setTitle('✓ Channel Configured')
-      .setDescription('This channel is now set up for AI conversations!\n\n**📖 How to Use:**\n• Just type any message and I\'ll respond with AI-powered answers\n• Messages starting with "?" will be ignored\n• Ask me anything - coding help, explanations, advice, or general questions\n\n**Available Commands:**\n• `!setchannel` - Set up AI chat in this channel (Admin only)\n• `!help` - Show this help message (Admin only)')
+      .setDescription('This channel is now set up for AI conversations!\n\n**📖 How to Use:**\n• Just type any message and I\'ll respond with AI-powered answers\n• Messages starting with "?" will be ignored\n• Ask me anything - coding help, explanations, advice, or general questions\n\n**Available Commands:**\n• `!setchannel` - Set up AI chat in this channel\n• `!purge <number>` - Delete messages (1-100)\n• `!help` - Show this help message')
       .setFooter({ text: '0xzero AI • Made by Taktfuld' })
       .setTimestamp();
     
@@ -41,11 +41,56 @@ client.on('messageCreate', async (message) => {
     return;
   }
 
+  if (message.content.startsWith('!purge')) {
+    try {
+      const args = message.content.split(' ');
+      const amount = parseInt(args[1]);
+
+      if (!amount || amount < 1 || amount > 100) {
+        const errorEmbed = new EmbedBuilder()
+          .setColor(0xFF0000)
+          .setTitle('❌ Invalid Amount')
+          .setDescription('Please provide a number between 1 and 100.\n\n**Usage:** `!purge <number>`\n**Example:** `!purge 10`')
+          .setFooter({ text: '0xzero AI • Made by Taktfuld' })
+          .setTimestamp();
+        
+        message.reply({ embeds: [errorEmbed] });
+        return;
+      }
+
+      const messages = await message.channel.messages.fetch({ limit: amount + 1 });
+      await message.channel.bulkDelete(messages, true);
+
+      const successEmbed = new EmbedBuilder()
+        .setColor(0x10A37F)
+        .setTitle('✓ Messages Deleted')
+        .setDescription(`Successfully deleted **${amount}** messages.`)
+        .setFooter({ text: '0xzero AI • Made by Taktfuld' })
+        .setTimestamp();
+      
+      const reply = await message.channel.send({ embeds: [successEmbed] });
+      
+      setTimeout(() => reply.delete().catch(() => {}), 3000);
+    } catch (error) {
+      console.error('Error purging messages:', error);
+      
+      const errorEmbed = new EmbedBuilder()
+        .setColor(0xFF0000)
+        .setTitle('⚠ Error')
+        .setDescription('Failed to delete messages. Make sure the bot has **Manage Messages** permission and messages are not older than 14 days.')
+        .setFooter({ text: '0xzero AI • Made by Taktfuld' })
+        .setTimestamp();
+      
+      message.reply({ embeds: [errorEmbed] });
+    }
+    return;
+  }
+
   if (message.content === '!help') {
     const helpEmbed = new EmbedBuilder()
       .setColor(0x10A37F)
       .setTitle('🤖 0xzero AI Bot - Help')
-      .setDescription('**How It Works:**\nI\'m an AI-powered assistant that responds to your messages with intelligent, detailed answers using GPT-4o.\n\n**📖 Usage:**\n• Just type any message in the configured channel\n• I\'ll respond with brief, clear answers\n• Messages starting with "?" are ignored (for other bots)\n\n**⚙️ Commands (Admin Only):**\n• `!setchannel` - Set up AI chat in current channel\n• `!help` - Show this help message\n\n**💡 Tips:**\n• Ask detailed questions for better answers\n• Say "explain in detail" or "elaborate" for longer responses\n• I can help with coding, explanations, advice, and more')
+      .setDescription('**How It Works:**\nI\'m an AI-powered assistant that responds to your messages with intelligent, detailed answers using GPT-4o.\n\n**📖 Usage:**\n• Just type any message in the configured channel\n• I\'ll respond with brief, clear answers\n• Messages starting with "?" are ignored (for other bots)\n\n**⚙️ Commands:**\n• `!setchannel` - Set up AI chat in current channel\n• `!purge <number>` - Delete messages (1-100)\n• `!help` - Show this help message\n\n**💡 Tips:**\n• Ask detailed questions for better answers\n• Say "explain in detail" or "elaborate" for longer responses\n• I can help with coding, explanations, advice, and more')
       .setFooter({ text: '0xzero AI • Made by Taktfuld' })
       .setTimestamp();
     

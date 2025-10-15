@@ -31,10 +31,9 @@ Preferred communication style: Simple, everyday language.
 - **Typing indicator**: Sends typing status while processing AI requests for better UX
 
 ### Command System
-- **Simple prefix-based commands**: Uses `!setchannel` and `!help` commands
-- **Admin-only access**: Both commands require Administrator permissions to prevent unauthorized configuration
+- **Simple prefix-based commands**: Uses `!setchannel`, `!purge`, and `!help` commands
+- **Purge functionality**: Allows bulk message deletion (1-100 messages) with Discord's 14-day limitation
 - **Embed responses**: Uses Discord EmbedBuilder for rich, formatted confirmation messages
-- **Permission validation**: Shows clear permission denied error for non-admin users
 - **No command framework**: Direct string matching for simplicity
 
 ### Professional UI/UX
@@ -58,6 +57,7 @@ Preferred communication style: Simple, everyday language.
   - Requires bot token (`DISCORD_BOT_TOKEN`)
   - Requires Message Content Intent privilege enabled
   - Requires Server Members Intent privilege enabled
+  - Requires Manage Messages permission for purge functionality
 
 - **OpenAI API**: AI response generation
   - API Key: `AI_INTEGRATIONS_OPENAI_API_KEY`

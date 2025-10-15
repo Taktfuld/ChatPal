@@ -27,9 +27,10 @@ AI-powered Discord bot that responds to messages using GPT-4o. Professional inte
 - Messages starting with **"?"** are ignored (for other bots)
 - Want more detail? Say **"explain in detail"** or **"elaborate"**
 
-### 3. Commands (Admins Only)
+### 3. Commands
 
 - `!setchannel` - Configure AI chat in current channel
+- `!purge <number>` - Delete messages (1-100)
 - `!help` - Show help information
 
 ## Deployment (24/7)
@@ -47,6 +48,7 @@ To run your bot 24/7 on Replit:
 - Discord Bot Token (as `DISCORD_BOT_TOKEN` secret)
 - OpenAI API access via Replit AI Integrations
 - **Discord Bot Intents**: Enable both **Message Content Intent** and **Server Members Intent** in Discord Developer Portal
+- **Discord Bot Permissions**: Enable **Manage Messages** permission for purge command to work
 
 ## Credits
 

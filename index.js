@@ -28,25 +28,6 @@ client.on('messageCreate', async (message) => {
   if (!message.guild) return;
 
   if (message.content === '!setchannel') {
-    try {
-      const member = message.member || await message.guild.members.fetch(message.author.id);
-      
-      if (!member.permissions.has(PermissionFlagBits.Administrator)) {
-        const noPermEmbed = new EmbedBuilder()
-          .setColor(0xFF0000)
-          .setTitle('❌ Permission Denied')
-          .setDescription('You need **Administrator** permissions to use this command.')
-          .setFooter({ text: '0xzero AI • Made by Taktfuld' })
-          .setTimestamp();
-        
-        message.reply({ embeds: [noPermEmbed] });
-        return;
-      }
-    } catch (error) {
-      console.error('Error checking permissions:', error);
-      return;
-    }
-
     setupChannelId = message.channel.id;
     
     const embed = new EmbedBuilder()
@@ -61,25 +42,6 @@ client.on('messageCreate', async (message) => {
   }
 
   if (message.content === '!help') {
-    try {
-      const member = message.member || await message.guild.members.fetch(message.author.id);
-      
-      if (!member.permissions.has(PermissionFlagBits.Administrator)) {
-        const noPermEmbed = new EmbedBuilder()
-          .setColor(0xFF0000)
-          .setTitle('❌ Permission Denied')
-          .setDescription('You need **Administrator** permissions to use this command.')
-          .setFooter({ text: '0xzero AI • Made by Taktfuld' })
-          .setTimestamp();
-        
-        message.reply({ embeds: [noPermEmbed] });
-        return;
-      }
-    } catch (error) {
-      console.error('Error checking permissions:', error);
-      return;
-    }
-
     const helpEmbed = new EmbedBuilder()
       .setColor(0x10A37F)
       .setTitle('🤖 0xzero AI Bot - Help')

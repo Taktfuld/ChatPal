@@ -46,6 +46,7 @@ To run your bot 24/7 on Replit:
 
 - Discord Bot Token (as `DISCORD_BOT_TOKEN` secret)
 - OpenAI API access via Replit AI Integrations
+- **Discord Bot Intents**: Enable both **Message Content Intent** and **Server Members Intent** in Discord Developer Portal
 
 ## Credits
 

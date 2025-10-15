@@ -26,11 +26,11 @@ client.on('messageCreate', async (message) => {
   if (message.author.bot) return;
 
   if (message.content === '!setchannel') {
-    if (!message.member.permissions.has(PermissionFlagBits.Administrator)) {
+    if (!message.guild || !message.member?.permissions.has(PermissionFlagBits.Administrator)) {
       const noPermEmbed = new EmbedBuilder()
         .setColor(0xFF0000)
         .setTitle('❌ Permission Denied')
-        .setDescription('You need **Administrator** permissions to use this command (;.')
+        .setDescription('You need **Administrator** permissions to use this command.')
         .setFooter({ text: '0xzero AI • Made by Taktfuld' })
         .setTimestamp();
       
@@ -52,7 +52,7 @@ client.on('messageCreate', async (message) => {
   }
 
   if (message.content === '!help') {
-    if (!message.member.permissions.has(PermissionFlagBits.Administrator)) {
+    if (!message.guild || !message.member?.permissions.has(PermissionFlagBits.Administrator)) {
       const noPermEmbed = new EmbedBuilder()
         .setColor(0xFF0000)
         .setTitle('❌ Permission Denied')

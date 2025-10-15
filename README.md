@@ -1,32 +1,52 @@
 # 0xzero AI Discord Bot
 
-A professional Discord bot that responds to messages in a designated channel using AI (ChatGPT-4o).
+AI-powered Discord bot that responds to messages using GPT-4o. Professional interface with concise, intelligent answers.
+
+**Made by Taktfuld**
 
 ## Features
 
-- Responds to all messages in the setup channel with detailed, intelligent answers
-- Ignores messages that start with "?"
-- Uses **OpenAI GPT-4o** (premium model) for exceptional response quality
-- Enhanced AI with comprehensive, well-structured answers and markdown formatting
-- 2000 token limit for detailed responses
-- Simple channel setup with `!setchannel` command
+- 🤖 Smart AI responses powered by GPT-4o
+- 💬 Concise answers by default (detailed when requested)
+- 🎨 Professional OpenAI-style green interface
+- 🔒 Admin-only setup commands
+- ⚡ Fast and responsive
 
-2. Invite the bot to your server
-   - GO to taktfuld github
-   - Find the url
-   - Copy the generated URL and open it in your browser to invite the bot
+## How to Use
 
-## Usage
+### 1. Setup (Admins Only)
 
-1. In any Discord channel, type `!setchannel` to set up that channel for AI chat
-2. The bot will respond to all messages in that channel (except those starting with "?")
-3. Messages starting with "?" are ignored by the bot
+1. Invite the bot to your Discord server
+2. In any channel, type: **`!setchannel`**
+3. That channel is now your AI chat channel!
 
-## How It Works
+### 2. Chat with the Bot
 
-- The bot listens to all messages in the designated channel
-- When a message is received (that doesn't start with "?"), it sends the message to OpenAI's GPT-4o-mini
-- The AI response is sent back as a reply to the user's message
+- Type any message in the configured channel
+- Bot responds with AI-powered answers
+- Messages starting with **"?"** are ignored (for other bots)
+- Want more detail? Say **"explain in detail"** or **"elaborate"**
 
+### 3. Commands (Admins Only)
 
-"MADE BY TAKTFULD_REKRUT"
+- `!setchannel` - Configure AI chat in current channel
+- `!help` - Show help information
+
+## Deployment (24/7)
+
+To run your bot 24/7 on Replit:
+
+1. Open **"Deployments"** from the left sidebar
+2. Select **"Reserved VM"**
+3. Choose **"Background worker"** as app type
+4. Set run command: `node index.js`
+5. Click **Deploy**
+
+## Requirements
+
+- Discord Bot Token (as `DISCORD_BOT_TOKEN` secret)
+- OpenAI API access via Replit AI Integrations
+
+## Credits
+
+**Made by Taktfuld** | Powered by GPT-4o

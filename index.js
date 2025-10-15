@@ -1,3 +1,4 @@
+require('dotenv').config();
 const { Client, GatewayIntentBits, EmbedBuilder, PermissionFlagBits } = require('discord.js');
 const OpenAI = require('openai');
 

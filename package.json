@@ -5,12 +5,19 @@
   "scripts": {
     "start": "node index.js"
   },
-  "keywords": ["discord", "bot", "ai", "chatgpt", "openai"],
+  "keywords": [
+    "discord",
+    "bot",
+    "ai",
+    "chatgpt",
+    "openai"
+  ],
   "author": "Taktfuld",
   "license": "MIT",
   "description": "AI-powered Discord bot using GPT-4o",
   "dependencies": {
     "discord.js": "^14.23.2",
+    "dotenv": "^17.2.3",
     "openai": "^6.3.0"
   }
 }

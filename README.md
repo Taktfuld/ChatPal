@@ -35,11 +35,31 @@ https://discord.com/oauth2/authorize?client_id=1427760337888739429&permissions=8
 - `!purge <number>` - Delete messages (1-100)
 - `!help` - Show help information
 
+## Setup Instructions
+
+### 1. Install Dependencies
+```bash
+npm install
+```
+
+### 2. Configure Environment Variables
+Create a `.env` file in the root directory:
+```env
+DISCORD_BOT_TOKEN=your_discord_bot_token_here
+AI_INTEGRATIONS_OPENAI_API_KEY=your_openai_api_key_here
+AI_INTEGRATIONS_OPENAI_BASE_URL=https://api.openai.com/v1
+```
+
+### 3. Run the Bot
+```bash
+npm start
+```
+
 ## Requirements
 
-- Discord Bot Token (set as `DISCORD_BOT_TOKEN` environment variable)
-- OpenAI API Key (set as `AI_INTEGRATIONS_OPENAI_API_KEY` environment variable)
-- OpenAI Base URL (set as `AI_INTEGRATIONS_OPENAI_BASE_URL` environment variable)
+- Node.js 16.11.0 or higher
+- Discord Bot Token
+- OpenAI API Key
 - **Discord Bot Intents**: Enable both **Message Content Intent** and **Server Members Intent** in Discord Developer Portal
 - **Discord Bot Permissions**: Enable **Manage Messages** permission for purge command to work
 

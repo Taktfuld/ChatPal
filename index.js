@@ -28,15 +28,22 @@ client.on('messageCreate', async (message) => {
   if (!message.guild) return;
 
   if (message.content === '!setchannel') {
-    if (!message.member || !message.member.permissions.has(PermissionFlagBits.Administrator)) {
-      const noPermEmbed = new EmbedBuilder()
-        .setColor(0xFF0000)
-        .setTitle('❌ Permission Denied')
-        .setDescription('You need **Administrator** permissions to use this command.')
-        .setFooter({ text: '0xzero AI • Made by Taktfuld' })
-        .setTimestamp();
+    try {
+      const member = message.member || await message.guild.members.fetch(message.author.id);
       
-      message.reply({ embeds: [noPermEmbed] });
+      if (!member.permissions.has(PermissionFlagBits.Administrator)) {
+        const noPermEmbed = new EmbedBuilder()
+          .setColor(0xFF0000)
+          .setTitle('❌ Permission Denied')
+          .setDescription('You need **Administrator** permissions to use this command.')
+          .setFooter({ text: '0xzero AI • Made by Taktfuld' })
+          .setTimestamp();
+        
+        message.reply({ embeds: [noPermEmbed] });
+        return;
+      }
+    } catch (error) {
+      console.error('Error checking permissions:', error);
       return;
     }
 
@@ -54,15 +61,22 @@ client.on('messageCreate', async (message) => {
   }
 
   if (message.content === '!help') {
-    if (!message.member || !message.member.permissions.has(PermissionFlagBits.Administrator)) {
-      const noPermEmbed = new EmbedBuilder()
-        .setColor(0xFF0000)
-        .setTitle('❌ Permission Denied')
-        .setDescription('You need **Administrator** permissions to use this command.')
-        .setFooter({ text: '0xzero AI • Made by Taktfuld' })
-        .setTimestamp();
+    try {
+      const member = message.member || await message.guild.members.fetch(message.author.id);
       
-      message.reply({ embeds: [noPermEmbed] });
+      if (!member.permissions.has(PermissionFlagBits.Administrator)) {
+        const noPermEmbed = new EmbedBuilder()
+          .setColor(0xFF0000)
+          .setTitle('❌ Permission Denied')
+          .setDescription('You need **Administrator** permissions to use this command.')
+          .setFooter({ text: '0xzero AI • Made by Taktfuld' })
+          .setTimestamp();
+        
+        message.reply({ embeds: [noPermEmbed] });
+        return;
+      }
+    } catch (error) {
+      console.error('Error checking permissions:', error);
       return;
     }
 

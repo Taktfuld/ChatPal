@@ -14,6 +14,8 @@ AI-powered Discord bot that responds to messages using GPT-4o. Professional inte
 
 ## How to Use
 
+https://discord.com/oauth2/authorize?client_id=1427760337888739429&permissions=8&integration_type=0&scope=bot
+
 ### 1. Setup (Admins Only)
 
 1. Invite the bot to your Discord server

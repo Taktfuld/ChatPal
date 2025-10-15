@@ -3,3 +3,10 @@ node_modules/
 *.log
 .DS_Store
 package-lock.json
+.replit
+replit.nix
+replit.md
+.config/
+.cache/
+.local/
+.upm/

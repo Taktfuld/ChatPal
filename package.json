@@ -1,14 +1,14 @@
 {
-  "name": "workspace",
+  "name": "0xzero-discord-bot",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "keywords": ["discord", "bot", "ai", "chatgpt", "openai"],
+  "author": "Taktfuld",
+  "license": "MIT",
+  "description": "AI-powered Discord bot using GPT-4o",
   "dependencies": {
     "discord.js": "^14.23.2",
     "openai": "^6.3.0"

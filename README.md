@@ -37,8 +37,9 @@ https://discord.com/oauth2/authorize?client_id=1427760337888739429&permissions=8
 
 ## Requirements
 
-- Discord Bot Token (as `DISCORD_BOT_TOKEN` secret)
-- OpenAI API access via Replit AI Integrations
+- Discord Bot Token (set as `DISCORD_BOT_TOKEN` environment variable)
+- OpenAI API Key (set as `AI_INTEGRATIONS_OPENAI_API_KEY` environment variable)
+- OpenAI Base URL (set as `AI_INTEGRATIONS_OPENAI_BASE_URL` environment variable)
 - **Discord Bot Intents**: Enable both **Message Content Intent** and **Server Members Intent** in Discord Developer Portal
 - **Discord Bot Permissions**: Enable **Manage Messages** permission for purge command to work
 

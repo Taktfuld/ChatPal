@@ -63,6 +63,20 @@ npm start
 - **Discord Bot Intents**: Enable both **Message Content Intent** and **Server Members Intent** in Discord Developer Portal
 - **Discord Bot Permissions**: Enable **Manage Messages** permission for purge command to work
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+**You can:**
+- ✅ Use it commercially
+- ✅ Modify it
+- ✅ Resell it
+- ✅ Distribute it
+
+**You must:**
+- Keep the copyright notice (can't claim it as yours)
+- Include the license with any copy
+
 ## Credits
 
 **Made by Taktfuld** | Powered by GPT-4o

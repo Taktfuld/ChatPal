@@ -24,9 +24,10 @@ client.on('ready', () => {
 
 client.on('messageCreate', async (message) => {
   if (message.author.bot) return;
+  if (!message.guild) return;
 
   if (message.content === '!setchannel') {
-    if (!message.guild || !message.member?.permissions.has(PermissionFlagBits.Administrator)) {
+    if (!message.member || !message.member.permissions.has(PermissionFlagBits.Administrator)) {
       const noPermEmbed = new EmbedBuilder()
         .setColor(0xFF0000)
         .setTitle('❌ Permission Denied')
@@ -52,7 +53,7 @@ client.on('messageCreate', async (message) => {
   }
 
   if (message.content === '!help') {
-    if (!message.guild || !message.member?.permissions.has(PermissionFlagBits.Administrator)) {
+    if (!message.member || !message.member.permissions.has(PermissionFlagBits.Administrator)) {
       const noPermEmbed = new EmbedBuilder()
         .setColor(0xFF0000)
         .setTitle('❌ Permission Denied')

@@ -30,7 +30,7 @@ client.on('messageCreate', async (message) => {
       const noPermEmbed = new EmbedBuilder()
         .setColor(0xFF0000)
         .setTitle('❌ Permission Denied')
-        .setDescription('You need **Administrator** permissions to use this command.')
+        .setDescription('You need **Administrator** permissions to use this command (;.')
         .setFooter({ text: '0xzero AI • Made by Taktfuld' })
         .setTimestamp();
       

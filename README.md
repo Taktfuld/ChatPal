@@ -29,4 +29,4 @@ A professional Discord bot that responds to messages in a designated channel usi
 - The AI response is sent back as a reply to the user's message
 
 
-"MADE BY TAKTFULD"
+"MADE BY TAKTFULD_REKRUT"

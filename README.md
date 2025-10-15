@@ -65,17 +65,17 @@ npm start
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is under a **Restricted Use License** - see the [LICENSE](LICENSE) file for details.
 
 **You can:**
-- ✅ Use it commercially
-- ✅ Modify it
-- ✅ Resell it
-- ✅ Distribute it
+- ✅ Use it for personal purposes
+- ✅ Modify it for personal use
 
-**You must:**
-- Keep the copyright notice (can't claim it as yours)
-- Include the license with any copy
+**You CANNOT:**
+- ❌ Sell or resell this software
+- ❌ Use it commercially
+- ❌ Redistribute or republish it
+- ❌ Remove credits ("Made by Taktfuld")
 
 ## Credits
 

@@ -13,7 +13,7 @@
     "openai"
   ],
   "author": "Taktfuld",
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE",
   "description": "AI-powered Discord bot using GPT-4o",
   "dependencies": {
     "discord.js": "^14.23.2",
